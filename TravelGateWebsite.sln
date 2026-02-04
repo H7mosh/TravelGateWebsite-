@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travelgate-backend", "Travelgate-backend\Travelgate-backend.csproj", "{60B67418-E2E6-D82D-C8A7-B61E0822616E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60B67418-E2E6-D82D-C8A7-B61E0822616E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B67418-E2E6-D82D-C8A7-B61E0822616E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B67418-E2E6-D82D-C8A7-B61E0822616E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B67418-E2E6-D82D-C8A7-B61E0822616E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB758F80-321B-4753-9174-F41328DFA39A}
+	EndGlobalSection
+EndGlobal

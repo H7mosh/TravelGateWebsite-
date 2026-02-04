@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Travelgate - Your gateway to unforgettable journeys. We offer hotel reservations, visa processing, group tours, and complete travel planning services.">
+    <meta name="keywords" content="travel, tours, visa, hotel booking, travel agency, Erbil, Iraq">
+    <title>Travelgate - Your Gateway to Unforgettable Journeys</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Section Visibility CSS -->
+    <style>
+        /* Hide sections with visibility pending attribute (hidden by default until API loads) */
+        section[data-visibility-pending="true"] {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        
+        /* Ensure hidden sections stay hidden */
+        section[data-section="hotels"].hidden-section,
+        section#hotels.hidden-section,
+        section#hotels[data-hidden="true"] {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        section[data-section="packages"].hidden-section,
+        section#packages.hidden-section,
+        section#packages[data-hidden="true"] {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        section[data-section="groups"].hidden-section,
+        section#groups.hidden-section,
+        section#groups[data-hidden="true"] {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- ==========================================
+         Header / Navbar
+         ========================================== -->
+    <header class="header">
+        <div class="container nav-inner">
+            <!-- Logo / Brand -->
+            <a href="#home" class="nav-brand">
+                <img src="./assets/images/logo.svg" alt="Travelgate" class="nav-logo">
+                <span class="nav-brand-text">Travelgate</span>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="hotels.html" class="nav-link">Hotels</a>
+                <a href="#packages" class="nav-link" data-en="Packages" data-ar="الباقات" data-ku="پاکێجەکان">Packages</a>
+                <a href="groups.html" class="nav-link">Group Tours</a>
+                <a href="group-programs.html" class="nav-link" data-i18n="navbar.groupPrograms">Group Programs</a>
+                <a href="transfers.html" class="nav-link">Transfers</a>
+                <a href="flights.html" class="nav-link">Flights</a>
+                <a href="lookup-reservation.html" class="nav-link">Look Up Reservation</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ar">AR</button>
+                    <button class="lang-btn" data-lang="ku">KU</button>
+                </div>
+            </nav>
+            
+            <!-- Hamburger Menu for Mobile -->
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         Hero Section with Video Background
+         ========================================== -->
+    <section id="home" class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="./assets/video/hero-travel.mp4" type="video/mp4">
+            <!-- fallback if video not supported -->
+        </video>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content container">
+            <h1 data-i18n="hero.title">Discover the world with Travelgate</h1>
+            <p data-i18n="hero.subtitle">We plan your trips, visas, hotels, and group tours with care.</p>
+            <a href="#contact" class="btn btn-accent" data-i18n="hero.buttonText">Plan Your Trip</a>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         About Section
+         ========================================== -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title text-start">Welcome to Travelgate</h2>
+                    <p class="about-description">
+                        Your premier travel partner for unforgettable journeys. We specialize in hotel reservations, group tours, airport transfers, and flight bookings - all designed to make your travel experience seamless and enjoyable.
+                    </p>
+                    <p class="about-description">
+                        With years of expertise and a commitment to excellence, we ensure every trip is planned to perfection.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Happy Travelers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Destinations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Partner Hotels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Services Section
+         ========================================== -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive travel solutions for all your needs</p>
+            
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Hotel Booking Service -->
+                <a href="hotels.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">🏨</div>
+                        <h3 class="service-name">Hotel Reservations</h3>
+                        <p class="service-description">Book from our curated selection of premium hotels worldwide. Best rates guaranteed.</p>
+                        <span class="service-cta">Explore Hotels →</span>
+                    </div>
+                </a>
+                
+                <!-- Group Tours Service -->
+                <a href="groups.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">🌍</div>
+                        <h3 class="service-name">Group Tours</h3>
+                        <p class="service-description">Join our organized group trips to amazing destinations with complete itineraries.</p>
+                        <span class="service-cta">View Tours →</span>
+                    </div>
+                </a>
+                
+                <!-- Airport Transfer Service -->
+                <a href="transfers.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">🚗</div>
+                        <h3 class="service-name">Airport Transfers</h3>
+                        <p class="service-description">Comfortable and reliable transfers between airports and hotels.</p>
+                        <span class="service-cta">Book Transfer →</span>
+                    </div>
+                </a>
+                
+                <!-- Flight Booking Service -->
+                <a href="flights.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">✈️</div>
+                        <h3 class="service-name">Flight Tickets</h3>
+                        <p class="service-description">Find and book the best flights with flexible options and competitive prices.</p>
+                        <span class="service-cta">Search Flights →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================
+         Featured Hotels Section
+         ========================================== -->
+    <section id="hotels" class="section section-light" data-section="hotels">
+        <div class="container">
+            <h2 class="section-title">Featured Hotels</h2>
+            <p class="section-subtitle">Discover our handpicked selection of premium hotels</p>
+            
+            <div id="hotelCardsContainer" class="row g-4"></div>
+            
+            <div class="text-center mt-5">
+                <a href="hotels.html" class="btn btn-primary btn-lg">
+                    <i class="bi bi-grid-3x3-gap me-2"></i>View All Hotels
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Packages Section
+         ========================================== -->
+    <section id="packages" class="section section-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-4">
+                    <h2 class="section-title" data-en="Hotel Packages" data-ar="باقات الفنادق" data-ku="پاکێجی هۆتێل">
+                        Hotel Packages
+                    </h2>
+                    <div class="title-underline"></div>
+                    <p class="text-center mt-3" data-en="Discover our exclusive hotel packages with fixed prices and special inclusions">
+                        Discover our exclusive hotel packages with fixed prices and special inclusions
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4" id="packageCardsContainer">
+                <div class="col-12 text-center">
+                    <div class="alert alert-info">
+                        <i class="bi bi-hourglass-split"></i> Loading packages...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Featured Group Tours Section
+         ========================================== -->
+    <section id="groups" class="section section-white">
+        <div class="container">
+            <div class="section-header-with-action">
+                <div>
+                    <h2 class="section-title text-start mb-2">Top Destinations</h2>
+                    <p class="section-subtitle text-start">From island escapes to cool mountain towns, discover where your next journey will take you</p>
+                </div>
+                <a href="groups.html" class="btn-view-more">
+                    View more
+                </a>
+            </div>
+            
+            <div id="groups-list" class="row g-4">
+                <!-- Groups will be loaded here by JavaScript -->
+                <div class="col-12">
+                    <div class="alert alert-info" id="groupsLoadingIndicator">
+                        <i class="bi bi-hourglass-split"></i> Loading group tours...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Featured Group Programs Section
+         ========================================== -->
+    <section id="group-programs" class="section section-light">
+        <div class="container">
+            <div class="section-header-with-action">
+                <div>
+                    <h2 class="section-title text-start mb-2" data-i18n="groupPrograms.title">Tour and Transfer Guide</h2>
+                    <p class="section-subtitle text-start" data-i18n="groupPrograms.subtitle">Join our organized group programs to amazing destinations</p>
+                </div>
+                <a href="group-programs.html" class="btn-view-more">
+                    View more
+                </a>
+            </div>
+            
+            <div id="programs-list-home" class="row g-4">
+                <!-- Group Programs will be loaded here by JavaScript -->
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <i class="bi bi-hourglass-split"></i> Loading group programs...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Featured Transfers Section
+         ========================================== -->
+    <section id="transfers" class="section section-light">
+        <div class="container">
+            <div class="section-header-with-action">
+                <div>
+                    <h2 class="section-title text-start mb-2">Transfer Packages</h2>
+                    <p class="section-subtitle text-start">Professional airport pickups and city transfers with fixed pricing</p>
+                </div>
+                <a href="transfers.html" class="btn-view-more">
+                    View more
+                </a>
+            </div>
+            
+            <div id="transfers-list-home" class="row g-4">
+                <!-- Transfers will be loaded here by JavaScript -->
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <i class="bi bi-hourglass-split"></i> Loading transfer packages...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Featured Flight Packages Section
+         ========================================== -->
+    <section id="flights" class="section section-white">
+        <div class="container">
+            <div class="section-header-with-action">
+                <div>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="section-icon-wrapper">
+                            <i class="bi bi-airplane-fill"></i>
+                        </div>
+                        <div>
+                            <h2 class="section-title text-start mb-2">Flight Packages</h2>
+                            <p class="section-subtitle text-start mb-0">Discover amazing destinations with our exclusive flight deals. Fixed prices, no hidden fees.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="flights.html" class="btn-view-more">
+                    View all flights
+                </a>
+            </div>
+            
+            <!-- Class Filter Tabs (for homepage) -->
+            <div class="flight-class-filters text-center mb-4">
+                <button class="filter-btn active" data-filter="all" onclick="filterHomepageFlights('all')">
+                    <i class="bi bi-grid-3x3 me-2"></i>All Classes
+                </button>
+                <button class="filter-btn" data-filter="Economy" onclick="filterHomepageFlights('Economy')">
+                    <i class="bi bi-star me-2"></i>Economy
+                </button>
+                <button class="filter-btn" data-filter="Business" onclick="filterHomepageFlights('Business')">
+                    <i class="bi bi-star-fill me-2"></i>Business
+                </button>
+                <button class="filter-btn" data-filter="First" onclick="filterHomepageFlights('First')">
+                    <i class="bi bi-gem me-2"></i>First Class
+                </button>
+            </div>
+            
+            <div id="flights-list-home" class="row g-4">
+                <!-- Flight packages will be loaded here by JavaScript -->
+                <div class="col-12">
+                    <div class="alert alert-info text-center">
+                        <i class="bi bi-hourglass-split"></i> Loading flight packages...
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="flights.html" class="btn btn-primary btn-lg">
+                    <i class="bi bi-airplane me-2"></i>Explore All Flight Packages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Contact Section
+         ========================================== -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">We're here to help with all your travel needs</p>
+            
+            <div class="contact-tabs-wrapper">
+                <!-- Tabs Navigation -->
+                <ul class="contact-tabs nav nav-tabs justify-content-center" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#contact-info-tab">
+                            <i class="bi bi-info-circle me-2"></i>Contact Info
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#message-tab">
+                            <i class="bi bi-envelope me-2"></i>Send Message
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#quick-inquiry-tab">
+                            <i class="bi bi-chat-dots me-2"></i>Quick Inquiry
+                        </button>
+                    </li>
+                </ul>
+                
+                <!-- Tabs Content -->
+                <div class="tab-content">
+                    <!-- Contact Info Tab -->
+                    <div class="tab-pane fade show active" id="contact-info-tab">
+                        <div class="contact-info-grid">
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                                <div class="contact-details">
+                                    <h4>Address</h4>
+                                    <p>Duhok, Iraq</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                                <div class="contact-details">
+                                    <h4>Phone</h4>
+                                    <p><a href="tel:+9647500000000">+964 750 000 0000</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
+                                <div class="contact-details">
+                                    <h4>WhatsApp</h4>
+                                    <p><a href="https://wa.me/9647500000000" target="_blank">+964 750 000 0000</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:info@travelgate.com">info@travelgate.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Send Message Tab -->
+                    <div class="tab-pane fade" id="message-tab">
+                        <div class="contact-form-wrapper">
+                            <form id="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="name">Your Name *</label>
+                                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email">Your Email *</label>
+                                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="What is this about?">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn-submit">
+                                    <i class="bi bi-send me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Inquiry Tab -->
+                    <div class="tab-pane fade" id="quick-inquiry-tab">
+                        <div class="contact-form-wrapper">
+                            <form id="quick-inquiry-form">
+                                <div class="form-group">
+                                    <label for="inquiry-service">Service Interested In *</label>
+                                    <select id="inquiry-service" name="service" required class="form-select">
+                                        <option value="">Select a service</option>
+                                        <option value="hotels">Hotel Reservation</option>
+                                        <option value="groups">Group Tours</option>
+                                        <option value="transfers">Airport Transfer</option>
+                                        <option value="flights">Flight Booking</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="inquiry-name">Your Name *</label>
+                                            <input type="text" id="inquiry-name" name="name" required placeholder="Enter your name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="inquiry-phone">Phone Number *</label>
+                                            <input type="tel" id="inquiry-phone" name="phone" required placeholder="+964 750 XXX XXXX">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="inquiry-details">Additional Details</label>
+                                    <textarea id="inquiry-details" name="details" rows="4" placeholder="Any specific requirements or questions?"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn-submit">
+                                    <i class="bi bi-check-circle me-2"></i>Submit Inquiry
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Footer
+         ========================================== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-copy" data-i18n="footer.copy">© 2025 Travelgate. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer" data-i18n="footer.privacyPolicy">Privacy Policy</a>
+                <a href="booking-cancellation-refund-policy.html" target="_blank" rel="noopener noreferrer" data-i18n="footer.bookingPolicy">Booking, Cancellation, and Refund Policy</a>
+            </div>
+            <div class="footer-social">
+                <span class="footer-social-label" data-i18n="footer.followUs">Follow Us</span>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                    <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                    <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+            <button type="button" class="footer-scroll-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Reservation Modal -->
+
+    <!-- Program Details Modal -->
+    <div class="modal fade" id="programDetailsModal" tabindex="-1" aria-labelledby="programDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="programDetailsTitle">Program Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="programDetailsContent">
+                    <!-- Content loaded dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="reserveProgramBtn" onclick="openReservationModal()">
+                        <i class="bi bi-calendar-check me-2"></i><span data-i18n="groupPrograms.reserve">Reserve Now</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotel Details Modal -->
+    <div class="modal fade" id="hotelDetailsModal" tabindex="-1" aria-labelledby="hotelDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Hotel Image -->
+                    <img id="detailsHotelImage" src="" alt="Hotel" class="hotel-details-image">
+                    
+                    <!-- Hotel Content -->
+                    <div class="hotel-details-content">
+                        <!-- Hotel Info -->
+                        <div class="hotel-info-section">
+                            <h3 id="detailsHotelName"></h3>
+                            <p class="location">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span id="detailsHotelLocation"></span>
+                            </p>
+                            <div id="detailsHotelStars" class="hotel-stars"></div>
+                        </div>
+                        
+                        <!-- Room Prices -->
+                        <div class="room-prices-section">
+                            <h5><i class="bi bi-door-open"></i>Room Types & Prices</h5>
+                            <div id="roomPricesList"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="proceedToReservation()">
+                        <i class="bi bi-calendar-check"></i>Reserve Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reservation Form Modal -->
+    <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reservationModalLabel">
+                        <i class="bi bi-calendar-check me-2"></i>Complete Your Reservation
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Hotel Info Summary -->
+                    <div class="reservation-summary">
+                        <h6>Reservation Summary</h6>
+                        <strong id="modalHotelName"></strong>
+                        <p id="modalHotelLocation">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span></span>
+                        </p>
+                        <div id="modalHotelStars" class="hotel-stars"></div>
+                        
+                        <!-- Room Type Selector -->
+                        <label for="modalRoomTypeSelect" class="form-label">
+                            <i class="bi bi-door-open me-1"></i>Select Room Type
+                        </label>
+                        <select class="form-select" id="modalRoomTypeSelect"></select>
+                        
+                        <!-- Price Display -->
+                        <div class="reservation-summary-item">
+                            <span>Total Price:</span>
+                            <span id="modalSelectedPrice"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Customer Information Form -->
+                    <div class="customer-info-section">
+                        <h6><i class="bi bi-person-fill"></i>Your Information</h6>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="customerFirstName" class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="customerFirstName" placeholder="John" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="customerSecondName" class="form-label">Second Name</label>
+                                <input type="text" class="form-control" id="customerSecondName" placeholder="Middle">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="customerSurname" class="form-label">Surname *</label>
+                                <input type="text" class="form-control" id="customerSurname" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="customerPhone" class="form-label">
+                                    <i class="bi bi-telephone me-1"></i>Phone Number *
+                                </label>
+                                <input type="tel" class="form-control" id="customerPhone" placeholder="+964 750 XXX XXXX" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="customerEmail" class="form-label">
+                                    <i class="bi bi-envelope me-1"></i>Email Address *
+                                </label>
+                                <input type="email" class="form-control" id="customerEmail" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms and Conditions -->
+                    <div class="mb-3 mt-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="reservationTerms" required>
+                            <label class="form-check-label" for="reservationTerms">
+                                <strong>I understand that this reservation is non-refundable under any circumstances or excuse.</strong>
+                                <span class="text-danger">*</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Message -->
+                    <div id="reservationError" style="display: none;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="continuePaymentBtn" onclick="handleContinueToPayment()">
+                        <span id="btnText">Confirm Reservation</span>
+                        <span id="btnSpinner" class="spinner-border spinner-border-sm ms-2" style="display: none;"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content success-modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="success-icon mb-4">
+                        <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                    </div>
+                    <h3>Reservation Successful!</h3>
+                    <p>Your hotel reservation has been confirmed successfully.</p>
+                    <p>
+                        <strong>Invoice ID:</strong>
+                        <span id="successInvoiceId"></span>
+                    </p>
+                    <div class="d-grid gap-2 mt-4">
+                        <!-- Download Invoice Button -->
+                        <button type="button" class="btn btn-primary" onclick="downloadInvoice()">
+                            <i class="bi bi-download me-2"></i>
+                            Download Invoice
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <!-- Section visibility MUST load first to prevent hidden sections from loading -->
+    <script src="js/api-config.js"></script>
+    <script src="js/coming-soon.js"></script>
+    <script src="js/section-visibility.js"></script>
+    <!-- Wait for section visibility to load before other scripts -->
+    <script>
+        // Make section visibility functions available globally
+        window.waitForSectionVisibility = function(callback) {
+            if (typeof sectionVisibility !== 'undefined' && typeof isSectionVisible === 'function') {
+                callback();
+            } else {
+                setTimeout(() => window.waitForSectionVisibility(callback), 50);
+            }
+        };
+    </script>
+    <script src="js/data-storage.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/reservation-utils.js"></script>
+    <script src="js/hotel-reservation.js"></script>
+    <script src="js/packages.js"></script>
+    <script src="js/group-tours.js"></script>
+    <script src="js/group-programs.js"></script>
+    <script src="js/transfers.js"></script>
+    <script src="js/flights.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

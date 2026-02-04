@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfers - TravelGate Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="bi bi-airplane"></i> TravelGate</h3>
+                <p class="text-muted small">Admin Dashboard</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+                <a href="reservations.html" class="nav-item">
+                    <i class="bi bi-calendar-check"></i> Reservations
+                </a>
+                <a href="hotels.html" class="nav-item">
+                    <i class="bi bi-building"></i> Hotels
+                </a>
+                <a href="packages.html" class="nav-item">
+                    <i class="bi bi-box-seam-fill"></i> Packages
+                </a>
+                <a href="groups.html" class="nav-item">
+                    <i class="bi bi-people"></i> Group Tours
+                </a>
+                <a href="group-programs.html" class="nav-item">
+                    <i class="bi bi-calendar-event"></i> Group Programs
+                </a>
+                <a href="transfers.html" class="nav-item active">
+                    <i class="bi bi-car-front"></i> Transfers
+                </a>
+                <a href="flights.html" class="nav-item">
+                    <i class="bi bi-airplane-fill"></i> Flight Packages
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Transfers Management</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" onclick="showAddTransferModal()">
+                        <i class="bi bi-plus-circle"></i> Add Transfer
+                    </button>
+                </div>
+            </header>
+
+            <!-- Search and Filters -->
+            <div class="content-section">
+                <div class="search-filter-bar">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search transfers...">
+                    <select class="form-select" id="serviceTypeFilter">
+                        <option value="">All Service Types</option>
+                        <option value="Private">Private</option>
+                        <option value="Shared">Shared</option>
+                    </select>
+                    <select class="form-select" id="tripTypeFilter">
+                        <option value="">All Trip Types</option>
+                        <option value="One Way">One Way</option>
+                        <option value="Round Trip">Round Trip</option>
+                    </select>
+                    <button class="btn btn-outline-secondary" onclick="clearFilters()">
+                        <i class="bi bi-x-circle"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Transfers Table -->
+            <div class="content-section">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Route</th>
+                                <th>Service Type</th>
+                                <th>Trip Type</th>
+                                <th>Price (IQD)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transfersTable">
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    <div class="spinner-container">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Transfer Modal -->
+    <div class="modal fade" id="transferModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="transferModalTitle">Add Transfer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="transferForm">
+                        <input type="hidden" id="transferId">
+                        <div class="mb-3">
+                            <label class="form-label">Route *</label>
+                            <input type="text" class="form-control" id="transferRoute" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Service Type *</label>
+                                <select class="form-select" id="transferServiceType" required>
+                                    <option value="">Select...</option>
+                                    <option value="Private">Private</option>
+                                    <option value="Shared">Shared</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Trip Type *</label>
+                                <select class="form-select" id="transferTripType" required>
+                                    <option value="">Select...</option>
+                                    <option value="One Way">One Way</option>
+                                    <option value="Round Trip">Round Trip</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price (IQD) *</label>
+                            <input type="number" class="form-control" id="transferPrice" step="0.01" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveTransfer()">Save Transfer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-check.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/transfers.js"></script>
+</body>
+</html>
+

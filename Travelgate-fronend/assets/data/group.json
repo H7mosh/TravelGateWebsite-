@@ -1,0 +1,993 @@
+[
+  {
+    "id": 1,
+    "name": "Istanbul Group Package",
+    "destination": "Istanbul",
+    "country": "Turkey",
+    "image": "assets/images/groups/istanbul_grou.jpg",
+    "includes": [
+      "Hotel (7 Nights)",
+      "Breakfast",
+      "Airport transport",
+      "Optional Tour"
+    ],
+    "currency": "IQD",
+    "validityDates": {
+      "from": "2025-12-25",
+      "to": "2025-12-29"
+    },
+    "airport": "Istanbul airport (IST)",
+    "hotels": [
+      {
+        "id": "hotel-1",
+        "name": "GRAND ABIMO HOTEL",
+        "stars": 3,
+        "prices": {
+          "double": 637000,
+          "triple": 637000,
+          "single": 838600,
+          "childWithBed": 637000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-2",
+        "name": "Ozbek Hotel",
+        "stars": 3,
+        "prices": {
+          "double": 707000,
+          "triple": 707000,
+          "single": 931000,
+          "childWithBed": 707000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-3",
+        "name": "KECIK HOTEL LALELI",
+        "stars": 3.5,
+        "prices": {
+          "double": 777000,
+          "triple": 777000,
+          "single": 1087800,
+          "childWithBed": 777000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-4",
+        "name": "ALFA HOTEL OLD CITY",
+        "stars": 4,
+        "prices": {
+          "double": 784000,
+          "triple": 784000,
+          "single": 1087800,
+          "childWithBed": 784000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-5",
+        "name": "All Seasons Hotel",
+        "stars": 4,
+        "prices": {
+          "double": 833000,
+          "triple": 833000,
+          "single": 1176000,
+          "childWithBed": 833000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-6",
+        "name": "BERR HOTEL",
+        "stars": 4,
+        "prices": {
+          "double": 861000,
+          "triple": 861000,
+          "single": 1253000,
+          "childWithBed": 861000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-7",
+        "name": "HALIFAKS HOTEL SISLI",
+        "stars": 4.5,
+        "prices": {
+          "double": 945000,
+          "triple": 945000,
+          "single": 1398600,
+          "childWithBed": 945000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-8",
+        "name": "BUKE HOTEL SISLI",
+        "stars": 4.5,
+        "prices": {
+          "double": 945000,
+          "triple": 945000,
+          "single": 1398600,
+          "childWithBed": 945000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-9",
+        "name": "WISHMORE HOTEL",
+        "stars": 5,
+        "prices": {
+          "double": 1099000,
+          "triple": 1099000,
+          "single": 1652000,
+          "childWithBed": 1099000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-10",
+        "name": "Holiday inn topkapi",
+        "stars": 5,
+        "prices": {
+          "double": 952000,
+          "triple": 952000,
+          "single": 1398600,
+          "childWithBed": 952000,
+          "childWithoutBed": 497000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "hotel-11",
+        "name": "HILTON BAKIRKOY ISTANBUL (Sea View)",
+        "stars": 5,
+        "prices": {
+          "double": 1239000,
+          "triple": 1239000,
+          "single": 1988000,
+          "childWithBed": 1239000,
+          "childWithoutBed": 511000,
+          "infant": 138600
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dubai Group Package",
+    "destination": "Dubai",
+    "country": "UAE",
+    "image": "assets/images/groups/dubai.jpg",
+    "includes": [
+      "Hotel (7 Nights)",
+      "Breakfast",
+      "Airport transport",
+      "Optional Tour"
+    ],
+    "currency": "IQD",
+    "validityDates": {
+      "from": "2025-12-27",
+      "to": "2025-12-30"
+    },
+    "airport": "DXB airport",
+    "notes": "TOURISM DIRHAM TAX EXCLUDED, SHOULD BE PAID BY GUEST",
+    "flightDays": "SAT,TUE",
+    "hotels": [
+      {
+        "id": "dubai-1",
+        "name": "SAN MARINO HOTEL",
+        "stars": 3,
+        "prices": {
+          "double": 1218000,
+          "triple": 1183000,
+          "single": 1610000,
+          "childWithBed": 1064000,
+          "childWithoutBed": 770000,
+          "infant": 182000
+        }
+      },
+      {
+        "id": "dubai-2",
+        "name": "VOGO GRAND HOTEL DUBAI",
+        "stars": 4,
+        "prices": {
+          "double": 1372000,
+          "triple": 1358000,
+          "single": 1862000,
+          "childWithBed": 1225000,
+          "childWithoutBed": 838600,
+          "infant": 182000
+        }
+      },
+      {
+        "id": "dubai-3",
+        "name": "KNIGHT AMOUR HOTEL",
+        "stars": 4,
+        "prices": {
+          "double": 1386000,
+          "triple": 1323000,
+          "single": 1855000,
+          "childWithBed": 1288000,
+          "childWithoutBed": 868000,
+          "infant": 182000
+        }
+      },
+      {
+        "id": "dubai-4",
+        "name": "SUNDAY GRAND EXCELSIOR HOTEL DEIRA",
+        "stars": 4,
+        "prices": {
+          "double": 1533000,
+          "triple": 1477000,
+          "single": 2000000,
+          "childWithBed": 1249500,
+          "childWithoutBed": 861000,
+          "infant": 182000
+        }
+      },
+      {
+        "id": "dubai-5",
+        "name": "CITY AVENUE HOTEL AL MUTEENA",
+        "stars": 3,
+        "prices": {
+          "double": 1568000,
+          "triple": 1477000,
+          "single": 1999200,
+          "childWithBed": 1283800,
+          "childWithoutBed": 854000,
+          "infant": 182000
+        }
+      },
+      {
+        "id": "dubai-6",
+        "name": "HOLIDAY INN EXPRESS DUBAI AIRPORT BY IHG",
+        "stars": 3,
+        "prices": {
+          "double": 1645000,
+          "triple": 1505000,
+          "single": 2000000,
+          "childWithBed": 1288700,
+          "childWithoutBed": 854000,
+          "infant": 182000
+        }
+      },
+      {
+        "id": "dubai-7",
+        "name": "SUNDAY MEGA HOTEL SHEKH ZAYED",
+        "stars": 4,
+        "prices": {
+          "double": 1645000,
+          "triple": 1554000,
+          "single": 2000000,
+          "childWithBed": 1333500,
+          "childWithoutBed": 868000,
+          "infant": 259000
+        }
+      },
+      {
+        "id": "dubai-8",
+        "name": "LANDMARK GRAND HOTEL",
+        "stars": 4,
+        "prices": {
+          "double": 1678600,
+          "triple": 1568000,
+          "single": 2000000,
+          "childWithBed": 1321950,
+          "childWithoutBed": 900550,
+          "infant": 210000
+        }
+      },
+      {
+        "id": "dubai-9",
+        "name": "HOLIDAY INN EXPRESS DUBAI INTERNET CITY",
+        "stars": 3,
+        "prices": {
+          "double": 2000000,
+          "triple": 1729000,
+          "single": 2000000,
+          "childWithBed": 1490300,
+          "childWithoutBed": 900550,
+          "infant": 231000
+        }
+      },
+      {
+        "id": "dubai-10",
+        "name": "HOLIDAY INN EXPRESS DUBAI JUMEIRA",
+        "stars": 3,
+        "prices": {
+          "double": 2000000,
+          "triple": 1729000,
+          "single": 2000000,
+          "childWithBed": 1488200,
+          "childWithoutBed": 875000,
+          "infant": 182000
+        }
+      },
+      {
+        "id": "dubai-11",
+        "name": "HOLIDAY INN EXPRESS DUBAI SAFA PARK",
+        "stars": 3,
+        "prices": {
+          "double": 2000000,
+          "triple": 1729000,
+          "single": 2000000,
+          "childWithBed": 1521800,
+          "childWithoutBed": 875000,
+          "infant": 182000
+        }
+      },
+      {
+        "id": "dubai-12",
+        "name": "CROWNE PLAZA DUBAI JUMEIRAH BY IHG",
+        "stars": 5,
+        "prices": {
+          "double": 2000000,
+          "triple": 1811600,
+          "single": 2000000,
+          "childWithBed": 1696700,
+          "childWithoutBed": 900550,
+          "infant": 210000
+        }
+      },
+      {
+        "id": "dubai-13",
+        "name": "ROSE RAYHAAN BY ROTANA",
+        "stars": 5,
+        "prices": {
+          "double": 2000000,
+          "triple": 2000000,
+          "single": 2000000,
+          "childWithBed": 2000000,
+          "childWithoutBed": 1015000,
+          "infant": 364000
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Beirut Group Package",
+    "destination": "Beirut",
+    "country": "Lebanon",
+    "image": "assets/images/groups/beirut.jpg",
+    "includes": [
+      "Hotel (7 Nights)",
+      "Breakfast",
+      "Airport transport"
+    ],
+    "currency": "IQD",
+    "validityDates": {
+      "from": "2025-12-25",
+      "to": "2025-12-29"
+    },
+    "notes": "All hotels include breakfast",
+    "hotels": [
+      {
+        "id": "beirut-1",
+        "name": "Elysee Hote",
+        "stars": 3,
+        "prices": {
+          "double": 763000,
+          "triple": 763000,
+          "single": 959000,
+          "childWithBed": 763000,
+          "childWithoutBed": 574000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "beirut-2",
+        "name": "Caesars Park Hotel (Hamra)",
+        "stars": 3,
+        "prices": {
+          "double": 861000,
+          "triple": 861000,
+          "single": 1113000,
+          "childWithBed": 861000,
+          "childWithoutBed": 574000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "beirut-3",
+        "name": "Plaza Hotel (Hamra)",
+        "stars": 4,
+        "prices": {
+          "double": 952000,
+          "triple": 952000,
+          "single": 1281000,
+          "childWithBed": 952000,
+          "childWithoutBed": 574000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "beirut-4",
+        "name": "WH Hotel (Hamra)",
+        "stars": 4,
+        "prices": {
+          "double": 945000,
+          "triple": 945000,
+          "single": 1281000,
+          "childWithBed": 945000,
+          "childWithoutBed": 588000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "beirut-5",
+        "name": "Casa D'or - Hotel (Hamra)",
+        "stars": 4,
+        "prices": {
+          "double": 987000,
+          "triple": 987000,
+          "single": 1337000,
+          "childWithBed": 987000,
+          "childWithoutBed": 588000,
+          "infant": 138600
+        }
+      },
+      {
+        "id": "beirut-6",
+        "name": "Palm Ville Suites (Hamra)",
+        "stars": 4,
+        "prices": {
+          "double": 1064000,
+          "triple": 1064000,
+          "single": 1498000,
+          "childWithBed": 1064000,
+          "childWithoutBed": 588000,
+          "infant": 168000
+        }
+      },
+      {
+        "id": "beirut-7",
+        "name": "Raouché Arjaan by Rotana",
+        "stars": 4.5,
+        "prices": {
+          "double": 1323000,
+          "triple": 1323000,
+          "single": 1883000,
+          "childWithBed": 1323000,
+          "childWithoutBed": 588000,
+          "infant": 168000
+        }
+      },
+      {
+        "id": "beirut-8",
+        "name": "Le Commodore Hotel (Hamra)",
+        "stars": 5,
+        "prices": {
+          "double": 1188600,
+          "triple": 1188600,
+          "single": 1523900,
+          "childWithBed": 1188600,
+          "childWithoutBed": 588000,
+          "infant": 168000
+        }
+      },
+      {
+        "id": "beirut-9",
+        "name": "Ramada Plaza by Wyndham Beirut Raouche",
+        "stars": 5,
+        "prices": {
+          "double": 1302000,
+          "triple": 1302000,
+          "single": 1869000,
+          "childWithBed": 1302000,
+          "childWithoutBed": 630000,
+          "infant": 168000
+        }
+      },
+      {
+        "id": "beirut-10",
+        "name": "Crowne Plaza Beirut by IHG",
+        "stars": 5,
+        "prices": {
+          "double": 1302000,
+          "triple": 1302000,
+          "single": 1869000,
+          "childWithBed": 1302000,
+          "childWithoutBed": 630000,
+          "infant": 168000
+        }
+      },
+      {
+        "id": "beirut-11",
+        "name": "Mövenpick Beirut (ROUCHE)",
+        "stars": 5,
+        "prices": {
+          "double": 2000000,
+          "triple": 2000000,
+          "single": 2000000,
+          "childWithBed": 2000000,
+          "childWithoutBed": 630000,
+          "infant": 168000
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Georgia Group Package",
+    "destination": "Georgia",
+    "country": "Georgia",
+    "image": "assets/images/groups/georgia.jpg",
+    "includes": [
+      "Hotel",
+      "Breakfast",
+      "Airport Transfer",
+      "Optional Tour"
+    ],
+    "currency": "IQD",
+    "validityDates": {
+      "from": "2025-12-26",
+      "to": null
+    },
+    "hotels": [
+      {
+        "id": "georgia-1",
+        "name": "MONICA HOTEL (RO) TBILISI / ORBI CITY HOTEL BATUMI (RO)",
+        "stars": 3,
+        "prices": {
+          "double": 1053500,
+          "single": 1155000,
+          "child2to6": 955500,
+          "infant": 559300
+        },
+        "note": "IRAQIA AIRWAYS"
+      },
+      {
+        "id": "georgia-2",
+        "name": "REDLINE HOTEL TBILISI / ORBI CITY HOTEL (RO) BATUMI",
+        "stars": 3.5,
+        "prices": {
+          "double": 1133300,
+          "single": 1287300,
+          "child2to6": 965300,
+          "infant": 573300
+        },
+        "note": "26/12/2025"
+      },
+      {
+        "id": "georgia-3",
+        "name": "REDLINE HOTEL TBILISI / Alliance Palace HOTEL BATUMI",
+        "stars": 4.5,
+        "prices": {
+          "double": 1179500,
+          "single": 1385300,
+          "child2to6": 965300,
+          "infant": 573300
+        }
+      },
+      {
+        "id": "georgia-4",
+        "name": "CHAMBERS TRADEMARK BY WYNDHAM TBILISI / Alliance Palace HOTEL BATUMI",
+        "stars": 4.5,
+        "prices": {
+          "double": 1179500,
+          "single": 1385300,
+          "child2to6": 965300,
+          "infant": 573300
+        }
+      },
+      {
+        "id": "georgia-5",
+        "name": "AMERI PLAZA HOTEL TIBLISI / ORBI CITY HOTEL BATUMI",
+        "stars": 4,
+        "prices": {
+          "double": 1179500,
+          "single": 1385300,
+          "child2to6": 965300,
+          "infant": 573300
+        }
+      },
+      {
+        "id": "georgia-6",
+        "name": "AMERI PLAZA HOTEL TIBLISI / Alliance Palace HOTEL BATUMI",
+        "stars": 5,
+        "prices": {
+          "double": 1249500,
+          "single": 1532300,
+          "child2to6": 965300,
+          "infant": 573300
+        }
+      },
+      {
+        "id": "georgia-7",
+        "name": "RADISSON RED HOTEL TBILISI / THE GRANDEUR HOTEL BATUMI",
+        "stars": 5,
+        "prices": {
+          "double": 1400000,
+          "single": 1868300,
+          "child2to6": 965300,
+          "infant": 573300
+        }
+      },
+      {
+        "id": "georgia-8",
+        "name": "GLARROS OLD TOWN HOTEL TBILISI / THE GRANDEUR HOTEL BATUMI",
+        "stars": 5,
+        "prices": {
+          "double": 1424500,
+          "single": 1868300,
+          "child2to6": 965300,
+          "infant": 573300
+        }
+      },
+      {
+        "id": "georgia-9",
+        "name": "RADISSON RED HOTEL TBILISI / HILTON HOTEL BATUMI",
+        "stars": 5,
+        "prices": {
+          "double": 1480500,
+          "single": 1973300,
+          "child2to6": 965300,
+          "infant": 573300
+        }
+      },
+      {
+        "id": "georgia-10",
+        "name": "GLARROS OLD TOWN HOTEL TBILISI / RADISSON BLU HOTEL BATUMI",
+        "stars": 5,
+        "prices": {
+          "double": 1494500,
+          "single": 1998500,
+          "child2to6": 965300,
+          "infant": 573300
+        }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Thailand Group Package",
+    "destination": "Thailand",
+    "country": "Thailand",
+    "image": "assets/images/groups/thailand.jpg",
+    "includes": [
+      "Hotel",
+      "Breakfast",
+      "Airport transport",
+      "Optional Tour"
+    ],
+    "currency": "IQD",
+    "itineraries": [
+      {
+        "id": "thai-1",
+        "name": "Bangkok 8 Nights",
+        "hotels": [
+          {
+            "id": "bkk-1",
+            "name": "woraburi sukhmvit hotel",
+            "stars": 3,
+            "prices": {
+              "double": 1862000,
+              "single": 2000000,
+              "triple": 1862000,
+              "child": 1757000,
+              "infant": 336000
+            }
+          },
+          {
+            "id": "bkk-2",
+            "name": "AMBASSADOR",
+            "stars": 4,
+            "prices": {
+              "double": 1988000,
+              "single": 2000000,
+              "triple": 1988000,
+              "child": 1764000,
+              "infant": 336000
+            }
+          },
+          {
+            "id": "bkk-3",
+            "name": "ROYAL BENJA HOTEL",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1764000,
+              "infant": 336000
+            }
+          },
+          {
+            "id": "bkk-4",
+            "name": "NYSA HOTEL",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1764000,
+              "infant": 336000
+            }
+          }
+        ]
+      },
+      {
+        "id": "thai-2",
+        "name": "4 Nights Bangkok + 4 Nights Pataya",
+        "hotels": [
+          {
+            "id": "bkk-pattaya-1",
+            "name": "woraburi sukhmvit hotel + CITRES GRAND",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1834000,
+              "infant": 336000
+            }
+          },
+          {
+            "id": "bkk-pattaya-2",
+            "name": "AMBASSADOR + CITRES GRAND",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1862000,
+              "infant": 336000
+            }
+          },
+          {
+            "id": "bkk-pattaya-3",
+            "name": "ROYAL BENJA HOTEL + CITRES GRAND",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1932000,
+              "infant": 336000
+            }
+          },
+          {
+            "id": "bkk-pattaya-4",
+            "name": "ROYAL BENJA HOTEL + PATTAYA SEA VIEW",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1946000,
+              "infant": 336000
+            }
+          },
+          {
+            "id": "bkk-pattaya-5",
+            "name": "NYSA HOTEL + PATTAYA SEA VIEW",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1946000,
+              "infant": 336000
+            }
+          }
+        ]
+      },
+      {
+        "id": "thai-3",
+        "name": "3 BANGKOK + 2 PATAYA + 3 PHUKET",
+        "hotels": [
+          {
+            "id": "multi-1",
+            "name": "AMBASSADOR + SILK HEMINGWAY + CITRUS GRAND",
+            "stars": 5,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1960000,
+              "infant": 406000
+            }
+          },
+          {
+            "id": "multi-2",
+            "name": "ROYAL BENJA HOTEL + AMATA PATONG + PATTAYA SEA VIEW",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 2000000,
+              "infant": 406000
+            }
+          },
+          {
+            "id": "multi-3",
+            "name": "NYSA HOTEL + THE NATURE5 + PATTAYA SEA VIEW",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 2000000,
+              "infant": 406000
+            }
+          }
+        ]
+      },
+      {
+        "id": "thai-4",
+        "name": "4 NIGHTS BANGKOK + 4 NIGHTS PHUKET",
+        "hotels": [
+          {
+            "id": "bkk-phuket-1",
+            "name": "woraburi sukhmvit hotel + MIRAGE",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1904000,
+              "infant": 406000
+            }
+          },
+          {
+            "id": "bkk-phuket-2",
+            "name": "ROYAL BENJA HOTEL + NEW SQUARE",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1988000,
+              "infant": 406000
+            }
+          },
+          {
+            "id": "bkk-phuket-3",
+            "name": "ROYAL BENJA HOTEL + AMATA PATONG",
+            "stars": 4,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1988000,
+              "infant": 406000
+            }
+          },
+          {
+            "id": "bkk-phuket-4",
+            "name": "ROYAL BENJA HOTEL + THE NATURE",
+            "stars": 5,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1904000,
+              "infant": 406000
+            }
+          },
+          {
+            "id": "bkk-phuket-5",
+            "name": "NYSA HOTEL + THE NATURE",
+            "stars": 5,
+            "prices": {
+              "double": 2000000,
+              "single": 2000000,
+              "triple": 2000000,
+              "child": 1904000,
+              "infant": 406000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Istanbul 7-Day New Year Guided Tour Package",
+    "destination": "Istanbul",
+    "country": "Turkey",
+    "image": "assets/images/groups/europe.jpg",
+    "includes": [
+      "Tour guide",
+      "Travel insurance",
+      "Optional 6-night hotel stay with breakfast",
+      "Optional tours in Turkey"
+    ],
+    "excludes": [
+      "Turkish visa",
+      "Special requests at the hotel",
+      "Minibar",
+      "World travel insurance"
+    ],
+    "currency": "IQD",
+    "itinerary": {
+      "days": 7,
+      "details": [
+        {
+          "day": 1,
+          "title": "Arrival",
+          "description": "Arrival from Shirnakh to Istanbul airport, transfer to hotel for rest"
+        },
+        {
+          "day": 2,
+          "title": "Bosphorus & Galata Tour",
+          "description": "Breakfast, optional Bosphorus tour, visit Venezia AVM (Aquarium), Galata Port walk, Galata Tower, Istiklal Street (Taksim Square)"
+        },
+        {
+          "day": 3,
+          "title": "Asia Side Tour",
+          "description": "Breakfast, optional Asia side tour to Camlica Hill and Camlica Tower, Uskudar walk near Kiz Kulesi (Maiden's Tower), visit Ortakoy"
+        },
+        {
+          "day": 4,
+          "title": "Private Yacht Tour",
+          "description": "Breakfast, optional private yacht tour with DJ to Buyukada, cycling, visit Kinaliada"
+        },
+        {
+          "day": 5,
+          "title": "Free Day / Optional Bursa Tour",
+          "description": "Free day with optional Bursa tour - mini-bus to Uludag, visit historical sites, cable car to Uludag heights, enjoy natural scenery"
+        },
+        {
+          "day": 6,
+          "title": "Free Day / Optional Sapanca Tour",
+          "description": "Free day with optional Sapanca tour - motorbike riding, visit mountain top, Zipline and other activities"
+        },
+        {
+          "day": 7,
+          "title": "Departure",
+          "description": "Transfer to Istanbul New Airport and departure back home"
+        }
+      ]
+    },
+    "hotels": [
+      {
+        "id": "istanbul-tour-1",
+        "name": "Marina City",
+        "stars": 3,
+        "prices": {
+          "adult": 199000,
+          "child2to6": 145000,
+          "infant0to2": 54000,
+          "singleSupplement": 81000
+        }
+      },
+      {
+        "id": "istanbul-tour-2",
+        "name": "Carlton hotel",
+        "stars": 4,
+        "prices": {
+          "adult": 253000,
+          "child2to6": 199000,
+          "infant0to2": 54000,
+          "singleSupplement": 97000
+        }
+      },
+      {
+        "id": "istanbul-tour-3",
+        "name": "Ilkbal Deluxe",
+        "stars": 4,
+        "prices": {
+          "adult": 253000,
+          "child2to6": 199000,
+          "infant0to2": 54000,
+          "singleSupplement": 97000
+        }
+      }
+    ]
+  }
+]
+

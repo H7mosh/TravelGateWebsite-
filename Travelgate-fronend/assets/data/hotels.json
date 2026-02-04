@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "name": "Grand Bosphorus Palace",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "stars": 5,
+    "image": "assets/images/hotels/hilton-istanbul-bosphorus.jpg",
+    "prices": {
+      "single": 180000,
+      "double": 320000,
+      "family": 420000
+    }
+  },
+  {
+    "id": 2,
+    "name": "Desert Oasis Luxury Resort",
+    "city": "Dubai",
+    "country": "UAE",
+    "stars": 5,
+    "image": "assets/images/hotels/jw-marriott-marquis-dubai.jpg",
+    "prices": {
+      "single": 650000,
+      "double": 1100000,
+      "family": 1800000
+    }
+  },
+  {
+    "id": 3,
+    "name": "Champs-Élysées Grand Hotel",
+    "city": "Paris",
+    "country": "France",
+    "stars": 4,
+    "image": "assets/images/hotels/le-méridien-paris-etoile.jpg",
+    "prices": {
+      "single": 850000,
+      "double": 1400000,
+      "family": 2000000
+    }
+  },
+  {
+    "id": 4,
+    "name": "Kurdistan Grand Hotel",
+    "city": "Erbil",
+    "country": "Iraq",
+    "stars": 5,
+    "image": "assets/images/hotels/rotana-erbil_hotel.jpg",
+    "prices": {
+      "single": 250000,
+      "double": 420000,
+      "family": 600000
+    }
+  },
+  {
+    "id": 5,
+    "name": "Hashemite Plaza Hotel",
+    "city": "Amman",
+    "country": "Jordan",
+    "stars": 4,
+    "image": "assets/images/hotels/the-royal-amman-hotel.jpg",
+    "prices": {
+      "single": 220000,
+      "double": 380000,
+      "family": 550000
+    }
+  },
+  {
+    "id": 6,
+    "name": "Mediterranean Paradise Resort",
+    "city": "Antalya",
+    "country": "Turkey",
+    "stars": 5,
+    "image": "assets/images/hotels/antalya_beach_resort.jpg",
+    "prices": {
+      "single": 480000,
+      "double": 850000,
+      "family": 1300000
+    }
+  },
+  {
+    "id": 7,
+    "name": "Capital City Inn",
+    "city": "Baghdad",
+    "country": "Iraq",
+    "stars": 2,
+    "image": "assets/images/hotels/capital_city_inn.jpg",
+    "prices": {
+      "single": 750,
+      "double": 1200,
+      "family": 1800
+    }
+  }
+]

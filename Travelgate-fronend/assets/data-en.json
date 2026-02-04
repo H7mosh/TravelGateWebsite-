@@ -1,0 +1,213 @@
+{
+  "site": {
+    "title": "Travelgate",
+    "tagline": "Your gateway to unforgettable journeys"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "whyUs": "Why Us",
+    "contact": "Contact",
+    "groupPrograms": "Group Programs"
+  },
+  "hero": {
+    "title": "Discover the world with Travelgate",
+    "subtitle": "We plan your trips, visas, hotels, and group tours with care.",
+    "buttonText": "Plan Your Trip"
+  },
+  "about": {
+    "title": "About Travelgate",
+    "description": "Travelgate is a premier travel agency dedicated to creating unforgettable travel experiences. With years of expertise in the industry, we provide comprehensive services including hotel reservations, visa processing, group tours, and full travel planning for individuals and companies. Our passionate team ensures every journey is seamless, memorable, and tailored to your unique preferences.",
+    "stats": {
+      "years": "10+",
+      "yearsLabel": "Years Experience",
+      "destinations": "50+",
+      "destinationsLabel": "Destinations",
+      "clients": "5000+",
+      "clientsLabel": "Happy Clients"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "id": "hotels",
+        "name": "Hotel Reservations",
+        "description": "We book the best hotels that fit your budget and preferences, from luxury resorts to cozy boutique stays.",
+        "icon": "🏨"
+      },
+      {
+        "id": "visa",
+        "name": "Visa Processing",
+        "description": "Complete visa handling for various countries with expert guidance and dedicated support throughout the process.",
+        "icon": "📋"
+      },
+      {
+        "id": "groups",
+        "name": "Group Tours",
+        "description": "Organized group trips with detailed itineraries, experienced tour leaders, and unforgettable experiences.",
+        "icon": "👥"
+      },
+      {
+        "id": "flights",
+        "name": "Flight Bookings",
+        "description": "Access to the best flight deals and seamless booking experience for domestic and international travel.",
+        "icon": "✈️"
+      },
+      {
+        "id": "packages",
+        "name": "Travel Packages",
+        "description": "All-inclusive travel packages designed to give you the best value and hassle-free vacation planning.",
+        "icon": "🎒"
+      },
+      {
+        "id": "corporate",
+        "name": "Corporate Travel",
+        "description": "Specialized business travel solutions for companies, including meetings, conferences, and team retreats.",
+        "icon": "💼"
+      }
+    ]
+  },
+  "whyUs": {
+    "title": "Why Choose Travelgate",
+    "points": [
+      "Experienced and trusted travel consultants with decade of expertise",
+      "Strong partnerships with premium hotels and major airlines worldwide",
+      "24/7 support before, during, and after your trip",
+      "Competitive pricing with no hidden fees",
+      "Personalized travel plans tailored to your preferences",
+      "Hassle-free visa processing with high success rate"
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "Duhok, Iraq",
+    "addressLabel": "Address",
+    "phone": "+964 750 754 0761",
+    "phoneLabel": "Phone",
+    "whatsapp": "+964 750 754 0761",
+    "whatsappLabel": "WhatsApp",
+    "email": "info@travelgate.com",
+    "emailLabel": "Email",
+    "formTitle": "Send us a message",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "Enter your name",
+    "emailInputLabel": "Your Email",
+    "emailPlaceholder": "Enter your email",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "submitButton": "Send Message",
+    "successMessage": "Thank you! Your message has been sent successfully."
+  },
+  "footer": {
+    "copy": "© 2025 Travelgate. All rights reserved.",
+    "followUs": "Follow Us",
+    "privacyPolicy": "Privacy Policy",
+    "bookingPolicy": "Booking, Cancellation, and Refund Policy"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "Learn how we handle your personal data, and how we are committed to protecting it and providing a safe experience while using our services."
+  },
+  "bookingPolicy": {
+    "title": "Booking, Cancellation & Refund Policy",
+    "intro": "This policy ensures a safe and reliable experience when using our website, mobile applications, or customer service team."
+  },
+
+  "hotels": {
+    "title": "Featured Hotels",
+    "subtitle": "Some of the hotels we can book for you.",
+    "items": [
+      {
+        "name": "Erbil View Hotel",
+        "city": "Erbil, Iraq",
+        "stars": 4,
+        "description": "Modern hotel in the heart of Erbil, ideal for business and family stays.",
+        "image": "./assets/images/hotels/erbil-view.jpg"
+      },
+      {
+        "name": "Istanbul City Hotel",
+        "city": "Istanbul, Turkey",
+        "stars": 4,
+        "description": "Comfortable stay close to major attractions and shopping areas.",
+        "image": "./assets/images/hotels/istanbul-city.jpg"
+      },
+      {
+        "name": "Dubai Marina Suites",
+        "city": "Dubai, UAE",
+        "stars": 5,
+        "description": "Luxury suites with sea view, perfect for holidays and business trips.",
+        "image": "./assets/images/hotels/dubai-marina.jpg"
+      }
+    ]
+  },
+
+  "visaCountries": {
+    "title": "Visa Services",
+    "subtitle": "We can assist with visas for the following countries:",
+    "items": [
+      {
+        "country": "Turkey",
+        "type": "Tourist Visa",
+        "note": "Guidance and document preparation for tourism trips.",
+        "image": "./assets/images/visa/turkey.jpg"
+      },
+      {
+        "country": "United Arab Emirates",
+        "type": "Visit / Tourist Visa",
+        "note": "Short and long stay visits for tourism or family trips.",
+        "image": "./assets/images/visa/uae.jpg"
+      },
+      {
+        "country": "Schengen Area",
+        "type": "Schengen Tourist Visa",
+        "note": "Support with appointments and required documents.",
+        "image": "./assets/images/visa/schengen.jpg"
+      }
+    ]
+  },
+
+  "groups": {
+    "title": "Group Tours",
+    "subtitle": "Join one of our organized group trips.",
+    "items": [
+      {
+        "name": "Istanbul Summer Group",
+        "destination": "Istanbul, Turkey",
+        "duration": "7 days / 6 nights",
+        "highlight": "City tours, Bosphorus cruise, shopping trips.",
+        "priceFrom": "From 450$ per person",
+        "image": "./assets/images/groups/istanbul-summer.jpg"
+      },
+      {
+        "name": "Dubai Shopping Festival Group",
+        "destination": "Dubai, UAE",
+        "duration": "6 days / 5 nights",
+        "highlight": "Malls, desert safari, city tour.",
+        "priceFrom": "From 600$ per person",
+        "image": "./assets/images/groups/dubai-shopping.jpg"
+      },
+      {
+        "name": "Umrah Group Package",
+        "destination": "Makkah & Madinah",
+        "duration": "10 days",
+        "highlight": "Flights, hotels near Haram, local guidance.",
+        "priceFrom": "From 900$ per person",
+        "image": "./assets/images/groups/umrah-group.jpg"
+      }
+    ]
+  },
+
+  "groupPrograms": {
+    "title": "Tour and Transfer Guide",
+    "subtitle": "Join our organized group programs to amazing destinations",
+    "reserve": "Reserve Now",
+    "viewDetails": "View Details",
+    "itinerary": "Program Itinerary",
+    "optional": "Optional",
+    "day": "Day",
+    "days": "Days"
+  }
+}
+

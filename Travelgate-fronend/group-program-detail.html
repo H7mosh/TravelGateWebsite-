@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover amazing group program packages - Travelgate">
+    <title>Group Program Details - Travelgate</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* Program Detail Page Styles */
+        .program-hero {
+            position: relative;
+            height: 75vh;
+            min-height: 600px;
+            overflow: hidden;
+            background: #0b63ce;
+        }
+        
+        .program-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            display: block;
+        }
+        
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        
+        .program-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 99, 206, 0.3);
+            z-index: 1;
+        }
+        
+        .program-hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .program-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .program-hero-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .program-hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .program-hero-meta-item i {
+            font-size: 1.5rem;
+        }
+        
+        .program-section {
+            padding: 4rem 0;
+        }
+        
+        .program-section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            color: var(--text);
+            text-align: center;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        
+        .program-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: var(--radius-full);
+        }
+        
+        .program-description {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: var(--radius-xl);
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .itinerary-timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+        
+        .itinerary-timeline::before {
+            content: '';
+            position: absolute;
+            left: 35px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+            opacity: 0.3;
+        }
+        
+        .itinerary-day {
+            position: relative;
+            margin-bottom: 4rem;
+            margin-left: 80px;
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+        
+        .itinerary-day:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        
+        .itinerary-day:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+        
+        .itinerary-day:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .itinerary-day-number-wrapper {
+            position: absolute;
+            left: -80px;
+            top: 2rem;
+            z-index: 10;
+        }
+        
+        .itinerary-day-number {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            box-shadow: 0 8px 25px rgba(11, 99, 206, 0.4);
+            border: 5px solid white;
+            position: relative;
+        }
+        
+        .itinerary-day-number::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .itinerary-day:hover .itinerary-day-number::after {
+            opacity: 0.3;
+        }
+        
+        .itinerary-day-content-wrapper {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0;
+            min-height: 400px;
+        }
+        
+        .itinerary-day-text-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .itinerary-day-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .itinerary-day-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 0.5rem 0;
+            line-height: 1.3;
+        }
+        
+        .itinerary-day-optional {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(245, 180, 27, 0.3);
+        }
+        
+        .itinerary-day-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .itinerary-day-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-light);
+        }
+        
+        .itinerary-day-image {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .itinerary-day:hover .itinerary-day-image {
+            transform: scale(1.1);
+        }
+        
+        .itinerary-day-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+            pointer-events: none;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .cta-description {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-reserve-large {
+            padding: 1.3rem 3.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(245, 180, 27, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-reserve-large::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-reserve-large:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn-reserve-large:hover {
+            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(245, 180, 27, 0.6);
+        }
+        
+        .btn-reserve-large:active {
+            transform: translateY(-2px);
+        }
+        
+        .btn-reserve-large span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .gallery-section {
+            background: var(--bg-light);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--bg-light);
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 1;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item:hover::before {
+            opacity: 0.2;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+        
+        @media (max-width: 768px) {
+            .program-hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .itinerary-timeline::before {
+                left: 25px;
+            }
+            
+            .itinerary-day {
+                margin-left: 60px;
+            }
+            
+            .itinerary-day-number-wrapper {
+                left: -60px;
+            }
+            
+            .itinerary-day-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .itinerary-day-content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .itinerary-day-image-wrapper {
+                min-height: 250px;
+            }
+            
+            .itinerary-day-image {
+                min-height: 250px;
+            }
+            
+            .program-hero-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-inner">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="nav-brand">
+                <img src="./assets/images/logo.svg" alt="Travelgate" class="nav-logo">
+                <span class="nav-brand-text">Travelgate</span>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="hotels.html" class="nav-link">Hotels</a>
+                <a href="groups.html" class="nav-link">Group Tours</a>
+                <a href="group-programs.html" class="nav-link active">Group Programs</a>
+                <a href="transfers.html" class="nav-link">Transfers</a>
+                <a href="flights.html" class="nav-link">Flights</a>
+                <a href="lookup-reservation.html" class="nav-link">Look Up Reservation</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ar">AR</button>
+                    <button class="lang-btn" data-lang="ku">KU</button>
+                </div>
+            </nav>
+            
+            <!-- Hamburger Menu for Mobile -->
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Program Hero Section -->
+    <section class="program-hero" id="programHero">
+        <img id="heroImage" src="" alt="" class="program-hero-image">
+        <div class="program-hero-overlay"></div>
+        <div class="container program-hero-content">
+            <div>
+                <h1 class="program-hero-title" id="programTitle">Loading...</h1>
+                <div class="program-hero-meta">
+                    <div class="program-hero-meta-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span id="programLocation">-</span>
+                    </div>
+                </div>
+                <button class="btn-reserve-large" onclick="openReservation()">
+                    <span><i class="bi bi-calendar-check me-2"></i>Reserve Now</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Description Section -->
+    <section class="program-section">
+        <div class="container">
+            <h2 class="program-section-title">About This Program</h2>
+            <p class="program-description" id="programDescription">
+                Loading program description...
+            </p>
+        </div>
+    </section>
+
+    <!-- Program Itinerary Section -->
+    <section class="program-section" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="program-section-title">Program Itinerary</h2>
+            <div class="itinerary-timeline" id="itineraryContainer">
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="program-section gallery-section">
+        <div class="container">
+            <h2 class="program-section-title">Destination Gallery</h2>
+            <div class="gallery-grid" id="galleryContainer">
+                <!-- Gallery items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Journey?</h2>
+                <p class="cta-description">Join our group program and create unforgettable memories with fellow travelers</p>
+                <button class="btn-reserve-large" onclick="openReservation()">
+                    <span><i class="bi bi-calendar-check me-2"></i>Reserve Your Spot Now</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Group Program Reservation Modal -->
+    <div class="modal fade" id="groupProgramReservationModal" tabindex="-1" aria-labelledby="groupProgramReservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="groupProgramReservationModalLabel">
+                        <i class="bi bi-calendar-check me-2"></i>Reserve Group Program
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Program Summary -->
+                    <div class="reservation-summary mb-4 p-3 bg-light rounded">
+                        <h6 class="mb-3"><i class="bi bi-info-circle me-2"></i>Program Details</h6>
+                        <strong id="modalProgramName" class="d-block mb-2"></strong>
+                        <p id="modalProgramLocation" class="text-muted mb-2">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span></span>
+                        </p>
+                    </div>
+                    
+                    <!-- Transport Options -->
+                    <div class="mb-4">
+                        <h6 class="mb-3"><i class="bi bi-car-front me-2"></i>Select Transport Option *</h6>
+                        <div id="transportOptionsContainer" class="row g-3">
+                            <!-- Transport options will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Number of Persons -->
+                    <div class="mb-4">
+                        <label for="programNumberOfPersons" class="form-label">
+                            <i class="bi bi-people me-2"></i>Number of Persons *
+                        </label>
+                        <input type="number" class="form-control" id="programNumberOfPersons" min="1" max="50" required placeholder="Enter number of persons (1, 2, 3, 4, 5...)" value="1">
+                    </div>
+                    
+                    <!-- Travel Date -->
+                    <div class="mb-4">
+                        <label for="programTravelDate" class="form-label">
+                            <i class="bi bi-calendar-event me-2"></i>Travel Date
+                        </label>
+                        <input type="date" class="form-control" id="programTravelDate" min="">
+                    </div>
+                    
+                    <!-- Total Price Display -->
+                    <div class="mb-4 p-3 bg-primary bg-opacity-10 rounded border border-primary">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong>Total Price:</strong>
+                            <span id="programTotalPrice" class="fs-4 fw-bold text-primary">--</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Customer Information Form -->
+                    <form id="groupProgramReservationForm">
+                        <h6 class="mb-3 mt-4"><i class="bi bi-person-fill me-2"></i>Your Information</h6>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="programCustomerName" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="programCustomerName" required placeholder="Enter your full name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="programCustomerPhone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="programCustomerPhone" required placeholder="+964 750 XXX XXXX">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="programCustomerEmail" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="programCustomerEmail" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="programCustomerNotes" class="form-label">Additional Notes</label>
+                            <textarea class="form-control" id="programCustomerNotes" rows="3" placeholder="Any special requirements or questions?"></textarea>
+                        </div>
+                        
+                        <!-- Terms and Conditions -->
+                        <div class="mb-3 mt-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="programReservationTerms" required>
+                                <label class="form-check-label" for="programReservationTerms">
+                                    <strong>I understand that this reservation is non-refundable under any circumstances or excuse.</strong>
+                                    <span class="text-danger">*</span>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Error Message -->
+                    <div id="programReservationError" class="alert alert-danger" style="display: none;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitGroupProgramReservation">
+                        <i class="bi bi-check-circle me-2"></i>Submit Reservation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-copy" data-i18n="footer.copy">© 2025 Travelgate. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer" data-i18n="footer.privacyPolicy">Privacy Policy</a>
+                <a href="booking-cancellation-refund-policy.html" target="_blank" rel="noopener noreferrer" data-i18n="footer.bookingPolicy">Booking, Cancellation, and Refund Policy</a>
+            </div>
+            <div class="footer-social">
+                <span class="footer-social-label" data-i18n="footer.followUs">Follow Us</span>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                    <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                    <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+            <button type="button" class="footer-scroll-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+            </button>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api-config.js"></script>
+    <script src="js/coming-soon.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/reservation-utils.js"></script>
+    <script src="js/group-program-detail.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

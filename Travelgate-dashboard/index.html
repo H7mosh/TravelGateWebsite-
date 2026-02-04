@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGate Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="bi bi-airplane"></i> TravelGate</h3>
+                <p class="text-muted small">Admin Dashboard</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+                <a href="reservations.html" class="nav-item">
+                    <i class="bi bi-calendar-check"></i> Reservations
+                </a>
+                <a href="hotels.html" class="nav-item">
+                    <i class="bi bi-building"></i> Hotels
+                </a>
+                <a href="packages.html" class="nav-item">
+                    <i class="bi bi-box-seam-fill"></i> Packages
+                </a>
+                <a href="groups.html" class="nav-item">
+                    <i class="bi bi-people"></i> Group Tours
+                </a>
+                <a href="group-programs.html" class="nav-item">
+                    <i class="bi bi-calendar-event"></i> Group Programs
+                </a>
+                <a href="transfers.html" class="nav-item">
+                    <i class="bi bi-car-front"></i> Transfers
+                </a>
+                <a href="flights.html" class="nav-item">
+                    <i class="bi bi-airplane-fill"></i> Flight Packages
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Dashboard Overview</h1>
+                <div class="header-actions">
+                    <div class="header-info">
+                        <span class="text-muted" id="currentDate"></span>
+                    </div>
+                    <div class="iraq-time-display" id="iraqTime">
+                        <i class="bi bi-clock"></i>
+                        <div class="iraq-time-content">
+                            <span class="iraq-time-label">Iraq Time</span>
+                            <span class="iraq-time-value" id="iraqTimeValue">--:--:--</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-icon bg-primary">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalReservations">-</h3>
+                        <p>Total Reservations</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-success">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="completedRevenue">-</h3>
+                        <p>Completed Revenue</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-warning">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="nonCompletedRevenue">-</h3>
+                        <p>Pending Revenue</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-danger">
+                        <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="dailyLimitStatus">-</h3>
+                        <p>Daily Limit Status</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-info">
+                        <i class="bi bi-building"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalHotels">-</h3>
+                        <p>Total Hotels</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Reservations -->
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Recent Reservations</h2>
+                    <a href="reservations.html" class="btn btn-sm btn-outline-primary">View All</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentReservationsTable">
+                            <tr>
+                                <td colspan="6" class="text-center">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-check.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "route": "AIRPORT DUBAI → CITY CENTER",
+        "serviceType": "ECONOMY",
+        "tripType": "one-way",
+        "price": 48000,
+        "features": [
+            "ECONOMY",
+            "One-way"
+        ]
+    },
+    {
+        "id": 2,
+        "route": "AIRPORT DUBAI → CITY CENTER",
+        "serviceType": "STANDARD",
+        "tripType": "one-way",
+        "price": 65000,
+        "features": [
+            "STANDARD",
+            "One-way"
+        ]
+    },
+    {
+        "id": 3,
+        "route": "AIRPORT DUBAI → CITY CENTER",
+        "serviceType": "FIRST CLASS",
+        "tripType": "one-way",
+        "price": 143000,
+        "features": [
+            "FIRST CLASS",
+            "One-way"
+        ]
+    },
+    {
+        "id": 4,
+        "route": "AIRPORT DUBAI → CITY CENTER",
+        "serviceType": "FIRST CLASS VAN",
+        "tripType": "one-way",
+        "price": 224000,
+        "features": [
+            "FIRST CLASS VAN",
+            "One-way"
+        ]
+    },
+    {
+        "id": 5,
+        "route": "AIRPORT DUBAI → CITY CENTER",
+        "serviceType": "FIRST CLASS VAN",
+        "tripType": "one-way",
+        "price": 224000,
+        "features": [
+            "FIRST CLASS VAN",
+            "One-way"
+        ]
+    },
+    {
+        "id": 6,
+        "route": "AIRPORT → V HOTELL + VOGO HOTEL",
+        "serviceType": "FIRS CLASS",
+        "tripType": "round-trip",
+        "price": 370000,
+        "features": [
+            "FIRS CLASS",
+            "Round-trip"
+        ]
+    },
+    {
+        "id": 7,
+        "route": "AIRPORT DUBAI → V HOTEL + VOGO HOTEL",
+        "serviceType": "FIRST CLASS",
+        "tripType": "one-way",
+        "price": 185000,
+        "features": [
+            "FIRST CLASS",
+            "One-way"
+        ]
+    },
+    {
+        "id": 8,
+        "route": "AIRPORT DUBAI → V HOTEL + VOGO HOTEL",
+        "serviceType": "ECONMOY",
+        "tripType": "round-trip",
+        "price": 145000,
+        "features": [
+            "ECONMOY",
+            "Round-trip"
+        ]
+    },
+    {
+        "id": 9,
+        "route": "AIRPORT DUBAI → V HOTEL + VOGO HOTEL",
+        "serviceType": "ECONOMY",
+        "tripType": "one-way",
+        "price": 75000,
+        "features": [
+            "ECONOMY",
+            "One-way"
+        ]
+    },
+    {
+        "id": 10,
+        "route": "AIRPORT BEIRUT → LANCASTER EDEN BAY",
+        "serviceType": "ECONMOY",
+        "tripType": "round-trip",
+        "price": 120000,
+        "features": [
+            "ECONMOY",
+            "Round-trip"
+        ]
+    },
+    {
+        "id": 11,
+        "route": "AIRPORT BEIRUT → CITY CENTER",
+        "serviceType": "ECONOMY",
+        "tripType": "one-way",
+        "price": 77000,
+        "features": [
+            "ECONOMY",
+            "One-way"
+        ]
+    },
+    {
+        "id": 12,
+        "route": "AIRPORT BEIRUT → ARJAN ROTANA HOTEL",
+        "serviceType": "ECONOMY",
+        "tripType": "one-way",
+        "price": 78000,
+        "features": [
+            "ECONOMY",
+            "One-way"
+        ]
+    }
+]

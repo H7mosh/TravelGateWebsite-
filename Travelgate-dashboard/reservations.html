@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations - TravelGate Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="bi bi-airplane"></i> TravelGate</h3>
+                <p class="text-muted small">Admin Dashboard</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+                <a href="reservations.html" class="nav-item active">
+                    <i class="bi bi-calendar-check"></i> Reservations
+                </a>
+                <a href="hotels.html" class="nav-item">
+                    <i class="bi bi-building"></i> Hotels
+                </a>
+                <a href="packages.html" class="nav-item">
+                    <i class="bi bi-box-seam-fill"></i> Packages
+                </a>
+                <a href="groups.html" class="nav-item">
+                    <i class="bi bi-people"></i> Group Tours
+                </a>
+                <a href="group-programs.html" class="nav-item">
+                    <i class="bi bi-calendar-event"></i> Group Programs
+                </a>
+                <a href="transfers.html" class="nav-item">
+                    <i class="bi bi-car-front"></i> Transfers
+                </a>
+                <a href="flights.html" class="nav-item">
+                    <i class="bi bi-airplane-fill"></i> Flight Packages
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Reservations Management</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" onclick="exportReservations()">
+                        <i class="bi bi-download"></i> Export CSV
+                    </button>
+                </div>
+            </header>
+
+            <!-- Tabs -->
+            <ul class="nav nav-tabs mb-3" id="reservationsTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="inquiries-tab" data-bs-toggle="tab" data-bs-target="#customerInquiriesPanel" type="button" role="tab">Customer Inquiries</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reservations-tab" data-bs-toggle="tab" data-bs-target="#reservationListPanel" type="button" role="tab">Reservation List</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="reservationsTabContent">
+                <!-- Customer Inquiries Panel -->
+                <div class="tab-pane fade show active" id="customerInquiriesPanel" role="tabpanel">
+                    <div class="content-section">
+                        <div id="inquiriesLoading" class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status"></div>
+                            <p class="mt-2 text-muted">Loading inquiries...</p>
+                        </div>
+                        <div id="inquiriesEmptyState" class="text-center text-muted py-5" style="display: none;">
+                            No voucher inquiries yet. Messages sent from the Look up reservation page appear here.
+                        </div>
+                        <div id="inquiriesTableWrapper" class="table-responsive" style="display: none;">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Voucher ID</th>
+                                        <th>Customer</th>
+                                        <th>Type</th>
+                                        <th>Subject</th>
+                                        <th>Message</th>
+                                        <th>Sent at</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="voucherInquiriesBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reservation List Panel -->
+                <div class="tab-pane fade" id="reservationListPanel" role="tabpanel">
+            <!-- Search and Filters -->
+            <div class="content-section">
+                <div class="search-filter-bar">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search by name, email, or phone...">
+                    <select class="form-select" id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Group">Group</option>
+                        <option value="Transfer">Transfer</option>
+                    </select>
+                    <select class="form-select" id="statusFilter">
+                        <option value="">All Processing Statuses</option>
+                        <option value="Waiting">Waiting for Webhook</option>
+                        <option value="Completed">Completed</option>
+                        <option value="email-fail">Email Failed</option>
+                    </select>
+                    <select class="form-select" id="paymentStatusFilter">
+                        <option value="">All Payment Statuses</option>
+                        <option value="Paid">Paid</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Failed">Failed</option>
+                        <option value="Canceled">Canceled</option>
+                        <option value="Refunded">Refunded</option>
+                    </select>
+                    <input type="date" class="form-control" id="dateFilter" placeholder="Filter by date">
+                    <button class="btn btn-outline-secondary" onclick="clearFilters()">
+                        <i class="bi bi-x-circle"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reservations Table -->
+            <div class="content-section">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Dates</th>
+                                <th>Status <small class="text-muted">(Processing / Payment)</small></th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservationsTable">
+                            <tr>
+                                <td colspan="10" class="text-center">
+                                    <div class="spinner-container">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="paginationContainer" class="mt-3"></div>
+            </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Inquiry Detail Modal -->
+    <div class="modal fade" id="inquiryDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Inquiry Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="inquiryDetailContent">
+                    <!-- Filled by JS -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reservation Details Modal -->
+    <div class="modal fade" id="reservationDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reservation Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="reservationDetailsContent">
+                    Loading...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-check.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/reservations.js"></script>
+</body>
+</html>
+
