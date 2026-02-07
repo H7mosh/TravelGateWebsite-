@@ -200,10 +200,6 @@ function getActivityImage(index) {
  * Open reservation modal/page
  */
 function openReservation() {
-    if (typeof showComingSoonMessage === 'function') {
-        showComingSoonMessage();
-        return;
-    }
     if (!currentProgram) {
         alert('Program information not available. Please refresh the page.');
         return;

@@ -410,10 +410,6 @@ function setupFilters() {
 // ===========================
 
 function openFlightBookingModal(flightId) {
-    if (typeof showComingSoonMessage === 'function') {
-        showComingSoonMessage();
-        return;
-    }
     console.log('[Flights] Opening booking modal for flight:', flightId);
     
     const flight = flightsData.find(f => f.id === flightId);

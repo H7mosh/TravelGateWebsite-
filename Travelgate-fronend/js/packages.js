@@ -233,10 +233,6 @@ async function loadPackages() {
 // ===========================
 
 function openPackageModal(packageId) {
-    if (typeof showComingSoonMessage === 'function') {
-        showComingSoonMessage();
-        return;
-    }
     const pkg = packagesData.find(p => {
         const normalized = normalizePackage(p);
         return normalized.id === packageId;

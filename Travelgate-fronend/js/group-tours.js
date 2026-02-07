@@ -738,10 +738,6 @@ function contactForGroup() {
 // ===========================
 
 function openGroupReservationModal() {
-    if (typeof showComingSoonMessage === 'function') {
-        showComingSoonMessage();
-        return;
-    }
     if (!selectedGroup) {
         alert('Please select a group tour first');
         return;

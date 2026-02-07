@@ -313,10 +313,6 @@ function setupFilters() {
 // ===========================
 
 function openTransferBookingModal(transferId) {
-    if (typeof showComingSoonMessage === 'function') {
-        showComingSoonMessage();
-        return;
-    }
     console.log('[Transfers] Opening booking modal for transfer:', transferId);
     
     const transfer = transfersData.find(t => t.id === transferId);

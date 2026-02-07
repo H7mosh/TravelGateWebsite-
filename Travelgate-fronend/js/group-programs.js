@@ -230,10 +230,6 @@ function buildDayItem(day) {
  * Open reservation modal
  */
 function openReservationModal() {
-    if (typeof showComingSoonMessage === 'function') {
-        showComingSoonMessage();
-        return;
-    }
     if (!selectedProgram) {
         alert('Please select a program first');
         return;

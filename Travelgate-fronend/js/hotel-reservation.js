@@ -295,10 +295,6 @@ function openHotelDetailsModal(hotelId) {
 }
 
 function proceedToReservation() {
-    if (typeof showComingSoonMessage === 'function') {
-        showComingSoonMessage();
-        return;
-    }
     // Close hotel details modal
     const detailsModal = bootstrap.Modal.getInstance(document.getElementById('hotelDetailsModal'));
     if (detailsModal) detailsModal.hide();
