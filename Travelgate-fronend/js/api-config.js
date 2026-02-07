@@ -1,10 +1,16 @@
 /**
  * API Configuration
- * Centralized configuration for API endpoints
+ * Centralized configuration for API endpoints and contact info
  */
 const API_CONFIG = {
     // Base URL for the API
     BASE_URL: 'https://api.travelgate.co/api',
+
+    // Company contact phone - used wherever phone is displayed on the website
+    CONTACT_PHONE: '07504575459',
+    CONTACT_PHONE_DISPLAY: '+964 750 457 5459',
+    CONTACT_PHONE_TEL: '+9647504575459',
+    CONTACT_PHONE_WHATSAPP: '9647504575459',
     
     // API Endpoints
     ENDPOINTS: {
