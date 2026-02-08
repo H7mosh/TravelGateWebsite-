@@ -119,6 +119,111 @@ function renderHotels(hotels, limit = null) {
     console.log(`Rendered ${hotelsToShow.length} hotels successfully${limit ? ' (limited from ' + hotels.length + ')' : ''}`);
 }
 
+// ===========================
+// Search & Filter (Hotels page)
+// ===========================
+
+function getHotelMinPrice(hotel) {
+    if (!hotel.prices) return 0;
+    return Math.min(hotel.prices.single || 0, hotel.prices.double || 0, hotel.prices.family || 0);
+}
+
+function applyHotelFilters() {
+    const searchEl = document.getElementById('hotelSearchInput');
+    const countryEl = document.getElementById('hotelFilterCountry');
+    const starsEl = document.getElementById('hotelFilterStars');
+    const sortEl = document.getElementById('hotelSortBy');
+    const container = document.getElementById('hotelCardsContainer');
+
+    if (!searchEl || !container || !hotelsData.length) return;
+
+    const searchText = (searchEl.value || '').trim().toLowerCase();
+    const country = (countryEl && countryEl.value) ? countryEl.value : '';
+    const minStars = starsEl && starsEl.value ? parseInt(starsEl.value, 10) : 0;
+    const sortBy = sortEl && sortEl.value ? sortEl.value : 'default';
+
+    let list = hotelsData.filter(function (hotel) {
+        if (searchText) {
+            const name = (hotel.name || '').toLowerCase();
+            const city = (hotel.city || '').toLowerCase();
+            const countryStr = (hotel.country || '').toLowerCase();
+            if (!name.includes(searchText) && !city.includes(searchText) && !countryStr.includes(searchText)) {
+                return false;
+            }
+        }
+        if (country && hotel.country !== country) return false;
+        if (minStars && (hotel.stars || 0) < minStars) return false;
+        return true;
+    });
+
+    if (sortBy === 'price-asc') {
+        list = list.slice().sort(function (a, b) { return getHotelMinPrice(a) - getHotelMinPrice(b); });
+    } else if (sortBy === 'price-desc') {
+        list = list.slice().sort(function (a, b) { return getHotelMinPrice(b) - getHotelMinPrice(a); });
+    } else if (sortBy === 'name') {
+        list = list.slice().sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
+    }
+
+    if (list.length === 0) {
+        container.innerHTML = `
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <h5>No hotels match your filters</h5>
+                    <p>Try adjusting your search or filter criteria.</p>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    renderHotels(list, null);
+}
+
+function populateCountryFilter() {
+    const countryEl = document.getElementById('hotelFilterCountry');
+    if (!countryEl || !hotelsData.length) return;
+    const countries = [];
+    hotelsData.forEach(function (h) {
+        if (h.country && countries.indexOf(h.country) === -1) countries.push(h.country);
+    });
+    countries.sort();
+    const currentValue = countryEl.value;
+    countryEl.innerHTML = '<option value="">All Countries</option>' +
+        countries.map(function (c) { return '<option value="' + c + '">' + c + '</option>'; }).join('');
+    if (countries.indexOf(currentValue) !== -1) countryEl.value = currentValue;
+}
+
+let hotelFiltersInitialized = false;
+
+function setupHotelFilterListeners() {
+    const searchEl = document.getElementById('hotelSearchInput');
+    const countryEl = document.getElementById('hotelFilterCountry');
+    const starsEl = document.getElementById('hotelFilterStars');
+    const sortEl = document.getElementById('hotelSortBy');
+    const resetEl = document.getElementById('hotelFiltersReset');
+    if (!searchEl || hotelFiltersInitialized) return;
+
+    function onFilterChange() {
+        applyHotelFilters();
+    }
+
+    searchEl.addEventListener('input', onFilterChange);
+    searchEl.addEventListener('keyup', onFilterChange);
+    if (countryEl) countryEl.addEventListener('change', onFilterChange);
+    if (starsEl) starsEl.addEventListener('change', onFilterChange);
+    if (sortEl) sortEl.addEventListener('change', onFilterChange);
+    if (resetEl) {
+        resetEl.addEventListener('click', function () {
+            searchEl.value = '';
+            if (countryEl) countryEl.value = '';
+            if (starsEl) starsEl.value = '';
+            if (sortEl) sortEl.value = 'default';
+            applyHotelFilters();
+        });
+    }
+    hotelFiltersInitialized = true;
+}
+
 // Load hotels from JSON file
 async function loadHotels() {
     console.log('[Hotels] ===== Starting hotel load process =====');
@@ -158,6 +263,10 @@ async function loadHotels() {
                 const limit = isHomePage ? 3 : null;
                 
                 renderHotels(hotelsData, limit);
+                if (!limit && document.getElementById('hotelSearchInput')) {
+                    populateCountryFilter();
+                    setupHotelFilterListeners();
+                }
                 
                 // Store in localStorage as cache/backup
                 if (window.dataStorage) {
@@ -195,6 +304,10 @@ async function loadHotels() {
             const limit = isHomePage ? 3 : null;
             
             renderHotels(hotelsData, limit);
+            if (!limit && document.getElementById('hotelSearchInput')) {
+                populateCountryFilter();
+                setupHotelFilterListeners();
+            }
             console.log(`[Hotels] ✓✓✓ Hotels rendered from localStorage fallback! ✓✓✓`);
             return;
         }

@@ -70,6 +70,47 @@
         </div>
     </section>
 
+    <!-- Search & Filter Bar (Hotels page only) -->
+    <section class="hotel-filters-section">
+        <div class="container">
+            <div class="hotel-filters-card">
+                <div class="hotel-filters-row">
+                    <div class="hotel-filter-search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" id="hotelSearchInput" class="form-control" placeholder="Search by hotel name, city or country" aria-label="Search hotels">
+                    </div>
+                    <div class="hotel-filter-group">
+                        <label for="hotelFilterCountry" class="hotel-filter-label">Country</label>
+                        <select id="hotelFilterCountry" class="form-select" aria-label="Filter by country">
+                            <option value="">All Countries</option>
+                        </select>
+                    </div>
+                    <div class="hotel-filter-group">
+                        <label for="hotelFilterStars" class="hotel-filter-label">Star rating</label>
+                        <select id="hotelFilterStars" class="form-select" aria-label="Filter by star rating">
+                            <option value="">All</option>
+                            <option value="3">3+ stars</option>
+                            <option value="4">4+ stars</option>
+                            <option value="5">5 stars</option>
+                        </select>
+                    </div>
+                    <div class="hotel-filter-group">
+                        <label for="hotelSortBy" class="hotel-filter-label">Sort by</label>
+                        <select id="hotelSortBy" class="form-select" aria-label="Sort hotels">
+                            <option value="default">Default</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="name">Name A–Z</option>
+                        </select>
+                    </div>
+                    <button type="button" id="hotelFiltersReset" class="btn btn-outline-secondary hotel-filter-reset" title="Clear filters">
+                        <i class="bi bi-arrow-counterclockwise"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hotels Section -->
     <section class="section section-light">
         <div class="container">

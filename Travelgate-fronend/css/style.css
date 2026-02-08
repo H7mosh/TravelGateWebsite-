@@ -119,6 +119,9 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 img {
@@ -2113,11 +2116,8 @@ body.lookup-page {
     display: flex;
     flex-direction: column;
 }
-body.lookup-page .footer {
-    margin-top: auto;
-}
-
 .footer {
+    margin-top: auto;
     background: var(--text);
     color: var(--white);
     padding: 1.5rem 0;
@@ -5433,4 +5433,94 @@ button.btn-reserve:hover,
     max-width: 600px;
     margin: 0 auto;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* ==========================================
+   Hotel Search & Filter Bar
+   ========================================== */
+.hotel-filters-section {
+    padding: 0 0 1.5rem;
+    margin-top: -1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hotel-filters-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.25rem 1.5rem;
+}
+
+.hotel-filters-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.hotel-filter-search {
+    flex: 1 1 220px;
+    min-width: 200px;
+    position: relative;
+}
+
+.hotel-filter-search i {
+    position: absolute;
+    left: 0.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.hotel-filter-search .form-control {
+    padding-left: 2.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--light-gray);
+}
+
+.hotel-filter-search .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(11, 99, 206, 0.15);
+}
+
+.hotel-filter-group {
+    flex: 0 1 auto;
+    min-width: 140px;
+}
+
+.hotel-filter-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.hotel-filter-group .form-select {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--light-gray);
+}
+
+.hotel-filter-reset {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .hotel-filters-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hotel-filter-search,
+    .hotel-filter-group {
+        min-width: 100%;
+    }
+    .hotel-filter-reset {
+        width: 100%;
+    }
 }
